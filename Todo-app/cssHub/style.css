@@ -1,0 +1,67 @@
+/*General Classes*/
+.active{
+    background-color: #cfe2ff !important;
+}
+.hide{
+    display: none !important;
+}
+/*********General || Styling********/
+.app{
+   
+    height: calc(100vh - 48px);
+    background:linear-gradient(#cfe2ff59, #cfe2ff59), url('../images/unnamed.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    
+}
+
+@media(max-width: 992px){
+  .app{
+    height:auto;
+    margin-top: 64px !important;
+  }
+}
+/*********Lists || Part*********/
+.tasks, .lists{
+    height:70vh;
+}
+.lists .added::-webkit-scrollbar,
+.tasks .content::-webkit-scrollbar{
+    width: 0;
+}
+@media(max-width:992px){
+    .lists .content {
+        height: 90% !important;
+    }
+
+}
+@media(max-width:768px){
+    .lists .content {
+        height: 80% !important;
+    }
+
+}
+/*********Tasks || Part*********/
+@media(max-width:767px){
+    .tasks .adding{
+        flex-direction: column;
+    }
+    .tasks .adding > *{
+        width:100% !important;
+    }
+    
+    .tasks{
+        display: none;
+    }
+}
+/********* Popup || Part **********/
+.popup .error{
+    font-size: 12px;
+}
+/********* Overlay || Part**********/
+.overlay{
+    background-color: rgba(0,0,0,.5);
+}
