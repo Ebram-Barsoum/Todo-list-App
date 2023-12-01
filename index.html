@@ -8,6 +8,9 @@
     <!--FontAwesome File-->
     <link rel="stylesheet" href="cssHub/all.min.css">
 
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    
     <!--Bootstrap File-->
     <link rel="stylesheet" href="cssHub/bootstrap.min.css">
 
@@ -23,15 +26,15 @@
     </div>
 
     <div class="app  py-md-5 mt-5">
-        <div class="container h-100 py-5 ">
+        <div class="container h-100 py-5">
             <div class="row h-100 g-3 justify-content-start ">  
                 <div class="col-12">
-                    <button class="collapse-btn btn btn-primary d-lg-none d-block col-2  text-center p-1 fs-3" data-bs-toggle="collapse" data-bs-target="#mult-collapse">
+                    <button class="collapse-btn btn btn-primary d-lg-none d-block col-2  text-center p-1 fs-3" data-bs-toggle="collapse" data-bs-target="#collapse">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
                
-                <div class="col-lg-4 px-3 collapse show" id="mult-collapse">
+                <div class="col-lg-4 px-3 collapse show" id="collapse">
                    
                     <div class="lists bg-primary-subtle rounded-3 p-4 d-lg-flex flex-column gap-3 overflow-hidden" >
                         <div class="title text-center fs-2 p-3 bg-light rounded-3 text-primary fw-bold">
@@ -39,8 +42,8 @@
                             Your Lists
                         </div>
                         <div class="content bg-light flex-grow-1 rounded-3 p-3  d-flex flex-column gap-2 overflow-hidden mt-3 ">
-                            <button class="add-list-btn btn btn-primary fs-5 fw-bold h-auto ">Add list</button>
-                            <div class="added w-100 flex-grow-1 d-flex flex-column gap-2 overflow-scroll "></div>
+                            <button class="add-list-btn btn btn-primary fs-5 fw-bold h-auto " data-bs-toggle="modal" data-bs-target="#popup">Add list</button>
+                            <div class="added w-100 flex-grow-1 d-flex flex-column gap-2 overflow-auto "></div>
                         </div>
                     </div>
                 </div>
@@ -57,26 +60,30 @@
                         </div>
                     </div>
                </div>
-
-               <div class="popup col-11 col-lg-4 bg-light position-absolute top-50 start-50 translate-middle shadow-lg rounded-3 opacity-0 z-n1 " id="popup">
-                <div class="content p-3 pt-5 d-flex flex-column  position-relative w-100 ">
-                    <input type="text" placeholder="Enter Your List's Name" class="new-list-input form-control mb-1">
-                    <div class="error text-danger"></div>
-                    <button class="new-list-btn btn btn-primary col-sm-4 col-lg-3 fw-bold mt-3">Create</button>
-                    <button class="popup-close-btn btn position-absolute top-0 end-0 border-0 fw-bold ">
-                        <i class="fa-regular fa-circle-xmark fs-3"></i>
-                    </button>
+               
+               <div class="popup modal fade" id="popup" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" placeholder="Enter Your List's Name" class="new-list-input form-control mb-1">
+                            <div class="error text-danger"></div>
+                            <input type="date" class="form-control mt-3" id="list-date" >
+                        </div>
+                        <div class="modal-footer justify-content-start ">
+                            <button class="new-list-btn btn btn-primary col-sm-4 col-lg-3 fw-bold mt-3">Save</button>
+                        </div>
+                    </div>
                 </div>
                </div>
             </div>
         </div>
        
-        <div class="overlay position-fixed top-0 start-0 h-100 w-100 d-none"></div>
+        <!-- <div class="overlay position-fixed top-0 start-0 h-100 w-100 d-none"></div> -->
     </div>
-
-    
-
-
+  
     <!--Bootstrap Bundle File-->
     <script src="jsHub/bootstrap.bundle.min.js"></script>
     <!--Main Js File-->
@@ -87,23 +94,3 @@
 
 
 
-<!--     Modal 
-<div class="modal fade popup" id="popup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-        <div class="modal-header">
-        <button type="button" class="btn-close popup-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body d-flex flex-column gap-2">
-            <input type="text" placeholder="Enter Your List's Name" class="new-list-input form-control">
-            <div class="error text-danger"></div>
-
-            <input type="date" class="form-control form-date-input">
-        </div>
-        <div class="modal-footer justify-content-s">
-        
-        <button class="btn btn-primary new-list-btn">Save</button>
-        </div>
-    </div>
-    </div>
-</div> -->

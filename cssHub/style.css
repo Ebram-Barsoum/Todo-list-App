@@ -5,25 +5,24 @@
 .hide{
     display: none !important;
 }
-/*********General || Styling********/
-.app{
-   
-    height: calc(100vh - 48px);
+body{
     background:linear-gradient(#cfe2ff59, #cfe2ff59), url('../images/unnamed.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    
+    background-attachment: fixed; 
+}
+/*********General || Styling********/
+.app{
+    height: calc(100vh - 48px);
 }
 
 @media(max-width: 992px){
   .app{
     height:auto;
-    margin-top: 64px !important;
   }
 }
+
 /*********Lists || Part*********/
 .tasks, .lists{
     height:70vh;
@@ -31,6 +30,13 @@
 .lists .added::-webkit-scrollbar,
 .tasks .content::-webkit-scrollbar{
     width: 0;
+}
+ .list-date{
+    font-size: 12px !important;
+    font-weight: 700 !important;
+}
+.list{
+    height: auto !important;
 }
 @media(max-width:992px){
     .lists .content {
@@ -45,6 +51,23 @@
 
 }
 /*********Tasks || Part*********/
+.task input.task-name{
+    border: none !important;
+    outline: none !important;
+    font-weight: bold !important;
+}
+
+.task div input.status:focus{
+    box-shadow:0 0 2px 5px #28a7465b !important;
+}
+.task div input:checked{
+    background-color: #218838 !important; 
+    border-color: #218838 !important;
+    color: #fff;
+}
+.task{
+    height: auto !important;
+}
 @media(max-width:767px){
     .tasks .adding{
         flex-direction: column;
@@ -60,8 +83,4 @@
 /********* Popup || Part **********/
 .popup .error{
     font-size: 12px;
-}
-/********* Overlay || Part**********/
-.overlay{
-    background-color: rgba(0,0,0,.5);
 }
